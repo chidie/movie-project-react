@@ -1,23 +1,20 @@
-import { useState } from 'react'
-import MovieCard from './components/movie-card';
-import Home
- from './pages/home';
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Favorites from './pages/favorites';
+import NavBar from './components/NavBar';
+import './css/App.css'
 
 function App() {
-  const movieNumber = 2;
   return (
-    // <>
-    //   {movieNumber === 1 ? (
-    //     <MovieCard movie={{title: "Reform", release_date: "2025"}}></MovieCard>) : (
-    //     <MovieCard movie={{title: "The Last Election", release_date: "2027"}}></MovieCard>)
-    //   } // conditional rendering
-    //   <MovieCard movie={{title: "The Grand Prison", release_date: "2026"}}></MovieCard>
-    //   <MovieCard movie={{title: "Reform", release_date: "2025"}}></MovieCard>
-    // </>
-    <>
-      <Home />
-    </>
+    <div>
+      <NavBar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 
