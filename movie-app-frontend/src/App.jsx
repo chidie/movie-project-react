@@ -3,18 +3,19 @@ import Home from './pages/home';
 import Favorites from './pages/favorites';
 import NavBar from './components/NavBar';
 import './css/App.css'
+import {MovieProvider} from './contexts/MovieContext'
 
 function App() {
   return (
-    <div>
-      <NavBar />
+    <MovieProvider>
+        <NavBar />
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </main>
-    </div>
+    </MovieProvider>
   );
 }
 
